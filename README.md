@@ -43,9 +43,6 @@ El proyecto distingue claramente entre la lógica de programación (`src`) y los
 
 Este script carga dos archivos de referencia para evaluar su similitud gráfica, dibujando automáticamente las zonas de frecuencia según el estándar **IEEE C57.149-2012**.
 
-<details>
-<summary><b>Ver código: Definición de Zonas IEEE</b></summary>
-
 ```matlab
 %% === Definir zonas de frecuencia ===
 % Se definen los límites de las zonas (Baja, Media, Alta frecuencia)
@@ -63,8 +60,6 @@ function dibujarZonas(zonas, posY, freqDatos)
     % ... (configuración de etiquetas y ejes)
 end
 ````
-
-\</details\>
 
 -----
 
