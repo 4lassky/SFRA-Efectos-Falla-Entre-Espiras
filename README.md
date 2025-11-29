@@ -1,4 +1,3 @@
-
 # ⚡ Análisis de Fallas en Transformadores mediante SFRA
 
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2020b%2B-orange?style=for-the-badge&logo=matlab)
@@ -17,11 +16,11 @@ El proyecto distingue claramente entre la lógica de programación (`src`) y los
 ### 1. ⚙️ `src-codigos/`
 *Scripts de procesamiento de señales y cálculo de índices de falla.*
 
-* **`SFRA_transformado_trif.m`** 🔌
+* **`SFRA_transformado_trif.m`** 🔌  
     * **Análisis Trifásico:** Genera la "huella digital" del transformador completo. Procesa magnitud (dB) y fase para las tres columnas del núcleo.
-* **`SFRA_Comparacion_fases.m`** 📉
+* **`SFRA_Comparacion_fases.m`** 📉  
     * **Diagnóstico Diferencial:** Algoritmos de comparación cruzada. Calcula desviaciones entre fases (A-B, B-C) para detectar asimetrías estructurales.
-* **`SFRA_Devanado_exp.m`** 🧪
+* **`SFRA_Devanado_exp.m`** 🧪  
     * **Banco de Pruebas:** Análisis focalizado en el devanado experimental con fallas inducidas controladas.
 
 ### 2. 💾 `data-datos_experimentales/`
@@ -62,20 +61,19 @@ function dibujarZonas(zonas, posY, freqDatos)
     end
     % ... (configuración de etiquetas y ejes)
 end
-````
-
-</details\>
+```
+</details>
 
 -----
 
-### 2\. `SFRA_Devanado_exp.m`
+### 2. `SFRA_Devanado_exp.m`
 
 **Objetivo:** Análisis de devanado experimental con fallas progresivas.
 
 Evalúa el comportamiento de un devanado bajo distintas condiciones de falla (discos), identificando automáticamente **5 resonancias clave** y generando visualizaciones avanzadas.
 
-<details\>
-\<summary\>\<b\>Ver código: Detección y Rastreo de 5 Resonancias\</b\>\</summary\>
+<details>
+<summary><b>Ver código: Detección y Rastreo de 5 Resonancias</b></summary>
 
 ```matlab
 % Loop principal para identificar las 5 resonancias en Referencia y Fallas
@@ -101,11 +99,10 @@ for nRes = 1:5
     end
 end
 ```
+</details>
 
-</details\>
-
-<details\>
-\<summary\>\<b\>Ver código: Generación de Superficie 3D\</b\>\</summary\>
+<details>
+<summary><b>Ver código: Generación de Superficie 3D</b></summary>
 
 ```matlab
 %% === Superficie 3D SFRA incluyendo referencia ===
@@ -120,11 +117,10 @@ colormap('parula'); shading interp; colorbar;
 view(45,25); grid on;
 xlabel('Frecuencia [Hz]'); ylabel('Disco'); zlabel('Magnitud [dB]');
 ```
+</details>
 
-</details\>
-
-<details\>
-\<summary\>\<b\>Ver código: Correlación de Pearson\</b\>\</summary\>
+<details>
+<summary><b>Ver código: Correlación de Pearson</b></summary>
 
 ```matlab
 %% === Correlación Pearson excluyendo referencia ===
@@ -144,19 +140,18 @@ for nRes = 1:5
     end
 end
 ```
-
-</details\>
+</details>
 
 -----
 
-### 3\. `SFRA_transformado_trif.m`
+### 3. `SFRA_transformado_trif.m`
 
 **Objetivo:** Diagnóstico de Transformadores Trifásicos.
 
 Adaptado para transformadores comerciales. Permite alternar entre análisis de **Circuito Abierto** y **Cortocircuito** modificando los rangos de frecuencia en el código.
 
-<details\>
-\<summary\>\<b\>Ver código: Selección de Rangos (Abierto/Corto)\</b\>\</summary\>
+<details>
+<summary><b>Ver código: Selección de Rangos (Abierto/Corto)</b></summary>
 
 ```matlab
 % === Configuración de Rangos de Frecuencia ===
@@ -171,11 +166,10 @@ rangosRef = [ 0       620e3; 620e3  1.3e6; 1.3e6   3e6];
 rangosFalla = [0       390e3; 390e3   1.3e6; 1.3e6  3.5e6];
 %}
 ```
+</details>
 
-</details\>
-
-<details\>
-\<summary\>\<b\>Ver código: Gráficas de Tendencia con Ajuste Lineal\</b\>\</summary\>
+<details>
+<summary><b>Ver código: Gráficas de Tendencia con Ajuste Lineal</b></summary>
 
 ```matlab
 %% === Subplots de tendencia por resonancia ===
@@ -190,15 +184,14 @@ if height(resSinRef)>=2 && numel(unique(resSinRef.Disco))>1
 end
 xlabel('Disco'); ylabel('Magnitud [dB]');
 ```
-
-</details\>
+</details>
 
 -----
 
 ## 🛠️ Requisitos del Sistema
 
-  * **MATLAB** (R2020b o superior recomendado).
-  * **RF Toolbox:** Necesaria para la función `sparameters` (lectura de archivos .s2p) y `rfparam`.
+  * **MATLAB** (R2020b o superior recomendado).  
+  * **RF Toolbox:** Necesaria para la función `sparameters` (lectura de archivos .s2p) y `rfparam`.  
   * **Signal Processing Toolbox:** Recomendada para `findpeaks` y `smooth`.
 
 -----
@@ -215,24 +208,22 @@ Los archivos experimentales siguen una codificación sistemática (ej. `23072501
 
 Para ejecutar los análisis, es necesario vincular la carpeta de datos con los scripts de código.
 
-1.  **Clonar el repositorio:**
+1. **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/4lassky/SFRA-Efectos-Falla-Entre-Espiras.git](https://github.com/4lassky/SFRA-Efectos-Falla-Entre-Espiras.git)
+    git clone https://github.com/4lassky/SFRA-Efectos-Falla-Entre-Espiras.git
     ```
-2.  **Abrir MATLAB** y situarse en la carpeta `src-codigos`.
-3.  **Configurar el Path:**
-    Los scripts requieren acceso a la carpeta de datos. Puede agregar la ruta manualmente o ejecutar en la consola de MATLAB:
+2. **Abrir MATLAB** y situarse en la carpeta `src-codigos`.
+3. **Configurar el Path:**  
+   Los scripts requieren acceso a la carpeta de datos. Puede agregar la ruta manualmente o ejecutar en la consola de MATLAB:
     ```matlab
     addpath('../data-datos_experimentales');
     savepath;
     ```
-4.  **Ejecutar el análisis:**
-    Abra `SFRA_transformado_trif.m` (o cualquier otro script) y ejecute el código (`F5`) para visualizar las curvas de respuesta.
+4. **Ejecutar el análisis:**  
+   Abra `SFRA_transformado_trif.m` (o cualquier otro script) y ejecute el código (`F5`) para visualizar las curvas de respuesta.
 
 -----
 
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](https://www.google.com/search?q=LICENSE) para más detalles.
-
-```
