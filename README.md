@@ -7,6 +7,7 @@
 
 Este repositorio contiene los códigos fuente y los datos experimentales para el análisis de la **Respuesta en Frecuencia de Barrido (SFRA)** en devanados de transformadores. El estudio se centra en el diagnóstico de problemas mecánicos y eléctricos (cortocircuitos francos y resistivos) mediante técnicas de correlación estadística.
 
+
 ---
 
 ## 🏗️ Estructura del Repositorio
@@ -223,6 +224,33 @@ Para ejecutar los análisis, es necesario vincular la carpeta de datos con los s
    Abra `SFRA_transformado_trif.m` (o cualquier otro script) y ejecute el código (`F5`) para visualizar las curvas de respuesta.
 
 -----
+## 👥 Créditos y Autores
+
+Este proyecto de investigación y desarrollo de software fue ejecutado por:
+
+| Investigador | Rol |
+| :--- | :--- |
+| **Herrera Godoy Hazael** | Investigación, Desarrollo de Algoritmos y Análisis Experimental |
+| **Galindo Barbosa Israel Aldahir** | Investigación, Desarrollo de Algoritmos y Análisis Experimental |
+
+-----
+
+## 🎓 Citar este trabajo
+
+Si utilizas este código o los datos experimentales en tu investigación, por favor cita el repositorio utilizando el formato adecuado:
+
+**BibTeX (para LaTeX):**
+```bibtex
+@software{SFRA_Fallas_2025,
+  author = {Herrera Godoy, Hazael and Galindo Barbosa, Israel Aldahir},
+  title = {Efecto de una falla entre espiras en la respuesta en frecuencia de devanados de transformadores},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  url = {[https://github.com/4lassky/SFRA-Efectos-Falla-Entre-Espiras](https://github.com/4lassky/SFRA-Efectos-Falla-Entre-Espiras)}
+}
+```
+----
 
 ## 📄 Licencia
 
