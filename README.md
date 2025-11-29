@@ -43,6 +43,9 @@ El proyecto distingue claramente entre la lógica de programación (`src`) y los
 
 Este script carga dos archivos de referencia para evaluar su similitud gráfica, dibujando automáticamente las zonas de frecuencia según el estándar **IEEE C57.149-2012**.
 
+<details>
+<summary><b>Ver código: Definición de Zonas IEEE</b></summary>
+
 ```matlab
 %% === Definir zonas de frecuencia ===
 % Se definen los límites de las zonas (Baja, Media, Alta frecuencia)
@@ -61,6 +64,8 @@ function dibujarZonas(zonas, posY, freqDatos)
 end
 ````
 
+</details\>
+
 -----
 
 ### 2\. `SFRA_Devanado_exp.m`
@@ -69,7 +74,7 @@ end
 
 Evalúa el comportamiento de un devanado bajo distintas condiciones de falla (discos), identificando automáticamente **5 resonancias clave** y generando visualizaciones avanzadas.
 
-\<details\>
+<details\>
 \<summary\>\<b\>Ver código: Detección y Rastreo de 5 Resonancias\</b\>\</summary\>
 
 ```matlab
@@ -97,9 +102,9 @@ for nRes = 1:5
 end
 ```
 
-\</details\>
+</details\>
 
-\<details\>
+<details\>
 \<summary\>\<b\>Ver código: Generación de Superficie 3D\</b\>\</summary\>
 
 ```matlab
@@ -116,9 +121,9 @@ view(45,25); grid on;
 xlabel('Frecuencia [Hz]'); ylabel('Disco'); zlabel('Magnitud [dB]');
 ```
 
-\</details\>
+</details\>
 
-\<details\>
+<details\>
 \<summary\>\<b\>Ver código: Correlación de Pearson\</b\>\</summary\>
 
 ```matlab
@@ -140,7 +145,7 @@ for nRes = 1:5
 end
 ```
 
-\</details\>
+</details\>
 
 -----
 
@@ -150,7 +155,7 @@ end
 
 Adaptado para transformadores comerciales. Permite alternar entre análisis de **Circuito Abierto** y **Cortocircuito** modificando los rangos de frecuencia en el código.
 
-\<details\>
+<details\>
 \<summary\>\<b\>Ver código: Selección de Rangos (Abierto/Corto)\</b\>\</summary\>
 
 ```matlab
@@ -167,9 +172,9 @@ rangosFalla = [0       390e3; 390e3   1.3e6; 1.3e6  3.5e6];
 %}
 ```
 
-\</details\>
+</details\>
 
-\<details\>
+<details\>
 \<summary\>\<b\>Ver código: Gráficas de Tendencia con Ajuste Lineal\</b\>\</summary\>
 
 ```matlab
@@ -186,7 +191,7 @@ end
 xlabel('Disco'); ylabel('Magnitud [dB]');
 ```
 
-\</details\>
+</details\>
 
 -----
 
@@ -230,5 +235,4 @@ Para ejecutar los análisis, es necesario vincular la carpeta de datos con los s
 
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](https://www.google.com/search?q=LICENSE) para más detalles.
 
-```
 ```
