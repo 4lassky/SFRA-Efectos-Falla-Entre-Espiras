@@ -1,4 +1,4 @@
-````markdown
+
 # ⚡ Análisis de Fallas en Transformadores mediante SFRA
 
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2020b%2B-orange?style=for-the-badge&logo=matlab)
