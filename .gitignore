@@ -1,0 +1,25 @@
+# --- BASURA DE MATLAB
+*.asv
+*.m~
+*.autosave
+*.lock
+*.log
+slprj/
+sfprj/
+codegen/
+
+# --- BASURA DEL SISTEMA
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*
+
+# --- DATOS IMPORTANTES
+!*.s2p
+!*.S2P
+!*.mat
+!*.csv
+!*.txt
+!*.rar
+!*.zip
+!*.pdf
