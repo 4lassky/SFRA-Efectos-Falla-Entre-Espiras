@@ -14,15 +14,29 @@ Este repositorio contiene los códigos fuente y los datos experimentales para el
 
 El proyecto distingue claramente entre la lógica de programación (`src`) y los archivos de entrada (`data`) para mantener un flujo de trabajo ordenado.
 
+Se analizaron 2 casos: Uno sobre un devanado de tipo continuo de 2000 vueltas, sin secundario y de tipo experimental. Otro sobre un transformador de distribución de 15 kvA, estrella-delta, con un tipo de nucleo de columna de tres piernas.
+
+<p align="center">
+  <img src="img/dev_exp_ubicacionfallas.png" alt="Devanado Experimental con tomas de falla" width="40%" style="margin-right: 15px;" />
+  
+  <img src="img/trafo_ubifalla.png" alt="Transformador de 15kVA conexiones" width="45%" style="margin-left: 15px;" />
+</p>
+<p align="center">
+  <em>Fig 1. Izquierda: Devanado experimental (Caso 1). Derecha: Transformador de 15 kVA (Caso 2).</em>
+</p>
+
+Al caso 1 en configuracion de circuito abierto, se le introdujeron cortocircuitos de tipo resistivos para la simulacion de fallas iniciales, tambien fallas de tipo franco para observar el comportamiento ante una falla grave. 
+Mientras que, al caso 2 en configuración de cortocirccuito y circuito abierto, se le simularon fallas de tipo capacitivo simulando un acercamiento de las espiras del devanado.
+
 ### 1. ⚙️ `src-codigos/`
 *Scripts de procesamiento de señales y cálculo de índices de falla.*
 
 * **`SFRA_transformado_trif.m`** 🔌  
-    * **Análisis Trifásico:** Genera la "huella digital" del transformador completo. Procesa magnitud (dB) y fase para las tres columnas del núcleo.
+    * **Caso 2: Análisis de transormador trifásico:** Genera la "huella digital" del transformador completo. Procesa magnitud (dB) y fase para las tres columnas del núcleo.
 * **`SFRA_Comparacion_fases.m`** 📉  
-    * **Diagnóstico Diferencial:** Algoritmos de comparación cruzada. Calcula desviaciones entre fases (A-B, B-C) para detectar asimetrías estructurales.
+    * **Análisis de 2 fases del transormador trifásico:** Algoritmos de comparación cruzada. Calcula desviaciones entre fases (A,B) para detectar asimetrías.
 * **`SFRA_Devanado_exp.m`** 🧪  
-    * **Banco de Pruebas:** Análisis focalizado en el devanado experimental con fallas inducidas controladas.
+    * **Caso 1: Devanado experimental:** Análisis focalizado en el devanado experimental con fallas inducidas controladas.
 
 ### 2. 💾 `data-datos_experimentales/`
 *Registros de medición en formato **Touchstone (.s2p)** obtenidos vía VNA.*
