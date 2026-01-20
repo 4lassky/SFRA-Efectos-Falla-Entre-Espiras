@@ -28,6 +28,14 @@ Se analizaron 2 casos: Uno sobre un devanado de tipo continuo de 2000 vueltas, s
 Al caso 1 en configuracion de circuito abierto, se le introdujeron cortocircuitos de tipo resistivos para la simulacion de fallas iniciales, tambien fallas de tipo franco para observar el comportamiento ante una falla grave. 
 Mientras que, al caso 2 en configuración de cortocirccuito y circuito abierto, se le simularon fallas de tipo capacitivo simulando un acercamiento de las espiras del devanado.
 
+
+A continuacion se muestra un video del caso 1 condicion falla franca, que fue posible gracias al gif generado por el estudio, muestra puntos donde se identificaron las principales 5 resonancias. En el eje "x" esta la frecuencia, en el "y" la posicion de la falla y en el "z" la magnitud.
+
+https://github.com/user-attachments/assets/a2d23834-d9e0-44f8-845f-a322cc534fb0
+
+
+
+
 ### 1. ⚙️ `src-codigos/`
 *Scripts de procesamiento de señales y cálculo de índices de falla.*
 
